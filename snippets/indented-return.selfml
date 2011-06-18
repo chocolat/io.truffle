@@ -1,0 +1,10 @@
+(name [Special: Return Inside Empty Parenthesis])
+
+(trigger
+    (key [[enter]]))
+
+(only-in [source.io meta.empty-parenthesis.io, source.io meta.comma-parenthesis.io])
+
+(snippet [
+	%{0}
+])

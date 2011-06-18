@@ -1,0 +1,10 @@
+(name testMethod)
+
+(trigger
+    (tab ts))
+
+(only-in source.io)
+
+(snippet [test%{1="SomeFeature"} := method(
+	%{0}
+)])

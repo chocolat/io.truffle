@@ -1,0 +1,10 @@
+(name method)
+
+(trigger
+    (tab m))
+
+(only-in source.io)
+
+(snippet [%{1="methodName"} := method(%{2="args,"}
+	%{0}
+)])

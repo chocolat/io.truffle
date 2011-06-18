@@ -1,0 +1,10 @@
+(name UnitTest)
+
+(trigger
+    (tab ut))
+
+(only-in source.io)
+
+(snippet [%{1="Something"}Test := %{2="UnitTest"} clone do(
+	%{0}
+)])

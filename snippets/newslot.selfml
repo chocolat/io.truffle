@@ -1,0 +1,8 @@
+(name newSlot)
+
+(trigger
+    (tab ns))
+
+(only-in source.io)
+
+(snippet [newSlot("%{1="slotName"}", %{2="defaultValue"}, "%{3="docString"}")%{0}])

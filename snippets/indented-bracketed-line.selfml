@@ -1,0 +1,11 @@
+(name [Indented Bracketed Line])
+
+(trigger
+    (key [[shift][cmd](])
+    (tab [(]))
+
+(only-in source.io)
+
+(snippet [(%{1="header,"}
+	%{2="body"}
+)%{0}])

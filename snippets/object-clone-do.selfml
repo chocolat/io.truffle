@@ -1,0 +1,10 @@
+(name [Object clone do])
+
+(trigger
+    (tab ocdo))
+
+(only-in source.io)
+
+(snippet [%{1="name"} := Object clone do(
+	%{0}
+)])

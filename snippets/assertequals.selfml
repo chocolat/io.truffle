@@ -1,0 +1,8 @@
+(name assertEquals)
+
+(trigger
+    (tab ae))
+
+(only-in source.io)
+
+(snippet [assertEquals(%{1="expected"}, %{2="expr"})])

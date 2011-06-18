@@ -1,0 +1,8 @@
+(name docSlot)
+
+(trigger
+    (tab ds))
+
+(only-in source.io)
+
+(snippet [docSlot("%{1="slotName"}", "%{2="documentation"}")])

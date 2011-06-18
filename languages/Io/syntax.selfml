@@ -1,0 +1,80 @@
+(root source.io
+    (zone
+        (match
+            (regex [\((\))]
+                (1 meta.empty-parenthesis.io))))
+    (zone
+        (match
+            (regex [\,(\))]
+                (1 meta.comma-parenthesis.io))))
+    (zone keyword.control.io
+        (match
+            (list if ifTrue ifFalse ifTrueIfFalse for loop reverseForeach foreach map continue break while do return)
+            (boundary.both)))
+    (zone comment.block.io
+        (start
+            (regex /\*
+                (0 punctuation.definition.comment.io)))
+        (end
+            (regex \*/
+                (0 punctuation.definition.comment.io))))
+    (zone comment.line.double-slash.io
+        (match
+            (regex [(//).*$\n?]
+                (1 punctuation.definition.comment.io))))
+    (zone comment.line.number-sign.io
+        (match
+            (regex [(#).*$\n?]
+                (1 punctuation.definition.comment.io))))
+    (zone variable.language.io
+        (match
+            (list self sender target proto protos parent)
+            (boundary.both)))
+    (zone keyword.operator.io
+        (match
+            (regex [<=|>=|=|:=|\*|\||\|\||\+|-|/|&|&&|>|<|\?|@|@@|\b(and|or)\b])))
+    (zone constant.other.io
+        (match
+            (regex [\bGL[\w_]+\b])))
+    (zone support.class.io
+        (match
+            (regex [\b([A-Z](\w+)?)\b])))
+    (zone support.function.io
+        (match
+            (regex [\b(clone|call|init|method|list|vector|block|(\w+(?=\s*\()))\b])))
+    (zone support.function.open-gl.io
+        (match
+            (regex [\b(gl(u|ut)?[A-Z]\w+)\b])))
+    (zone string.quoted.triple.io
+        (start
+            (regex """
+                (0 punctuation.definition.string.begin.io)))
+        (end
+            (regex """
+                (0 punctuation.definition.string.end.io)))
+        (subzones
+            (zone constant.character.escape.io
+                (match
+                    (regex \\.)))))
+    (zone string.quoted.double.io
+        (start
+            (regex "
+                (0 punctuation.definition.string.begin.io)))
+        (end
+            (regex "
+                (0 punctuation.definition.string.end.io)))
+        (subzones
+            (zone constant.character.escape.io
+                (match
+                    (regex \\.)))))
+    (zone constant.numeric.io
+        (match
+            (regex [\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f)?\b])))
+    (zone variable.other.global.io
+        (match
+            (list Lobby)
+            (boundary.right)))
+    (zone constant.language.io
+        (match
+            (list TRUE true FALSE false NULL null Null Nil nil YES NO)
+            (boundary.both))))

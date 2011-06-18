@@ -1,0 +1,10 @@
+(name [clone do])
+
+(trigger
+    (tab cdo))
+
+(only-in source.io)
+
+(snippet [%{1="%{2=\"newValue\"} := %{3=\"Object\"} "}clone do(
+	%{0}
+)])
